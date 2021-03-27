@@ -1,18 +1,18 @@
-#include <iostream>
-#include <string>
+#include<iostream>
 using namespace std;
-
-int main()
-{
-	int a, b, c;
-	cin >> a;
-	cin >> b;
-	cin >> c;
-	int d = a * b * c;
-	string str = to_string(d);
-	int num[10];
-	for (int i = 0; i < str.size(); i++)
-	{
-		num[atoi((str[i]).c_str())]++;
-	}
+ 
+int main(void){
+    int a, b, c; 
+    int arr[10] = {0};
+    cin >> a >> b >> c;
+    int result = a*b*c;
+    while(result != 0){
+        arr[result % 10] +=1;
+        result /= 10;
+    }
+    for(int i=0; i<10; i++){
+        cout << arr[i] << endl;
+    }
+    
+    return 0;
 }
